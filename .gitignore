@@ -1,6 +1,7 @@
 node_modules/
 dist/
-lib/
+# compiled TypeScript output (backend only)
+packages/backend/lib/
 _site/
 .env
 .env.local
