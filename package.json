@@ -1,0 +1,20 @@
+{
+  "name": "11ty-editor",
+  "private": true,
+  "workspaces": [
+    "packages/frontend",
+    "packages/backend"
+  ],
+  "scripts": {
+    "dev:frontend": "npm run dev --workspace=packages/frontend",
+    "dev:backend": "npm run dev --workspace=packages/backend",
+    "build": "npm run build --workspace=packages/frontend && npm run build --workspace=packages/backend",
+    "build:frontend": "npm run build --workspace=packages/frontend",
+    "build:backend": "npm run build --workspace=packages/backend",
+    "deploy": "npm run build && firebase deploy",
+    "emulate": "npm run build:backend && firebase emulators:start"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.0"
+  }
+}

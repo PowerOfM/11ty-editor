@@ -1,0 +1,22 @@
+{
+  "hosting": {
+    "public": "packages/frontend/dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      { "source": "/api/**", "function": "api" },
+      { "source": "**", "destination": "/index.html" }
+    ]
+  },
+  "functions": [
+    {
+      "source": "packages/backend",
+      "codebase": "default",
+      "ignore": ["node_modules", ".git", "*.local.json", "src/**/*.test.ts"]
+    }
+  ],
+  "emulators": {
+    "functions": { "port": 5001 },
+    "hosting": { "port": 5000 },
+    "ui": { "enabled": true }
+  }
+}
