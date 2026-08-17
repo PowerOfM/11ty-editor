@@ -1,0 +1,13 @@
+# Site-wide footer. Edited by the client through the visual editor.
+# The comments and key order in this file survive every save — that is the
+# whole point of the serializer in @astro-editor/schema.
+
+tagline: Bench-made joinery for people who keep things
+copyright: © 2026 Northwind Joinery
+
+links:
+  - text: Our work
+    href: /about
+  # Seasonal: the workshop closes for August, but leave the link in place.
+  - text: Commissions
+    href: mailto:hello@northwind.example

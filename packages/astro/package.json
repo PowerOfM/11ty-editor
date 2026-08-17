@@ -1,0 +1,34 @@
+{
+  "name": "@astro-editor/astro",
+  "version": "0.0.0",
+  "description": "Astro integration and site-side runtime for the visual editor.",
+  "type": "module",
+  "files": ["dist"],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./runtime": {
+      "types": "./dist/runtime.d.ts",
+      "default": "./dist/runtime.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "rm -rf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@astro-editor/schema": "workspace:*"
+  },
+  "peerDependencies": {
+    "astro": "^5.0.0 || ^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.1",
+    "astro": "^5.16.2",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,80 @@
+---
+import Footer from '../components/Footer.astro'
+import { themeCss } from '../lib/content'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · Northwind Joinery</title>
+    {/* Theme tokens land as CSS custom properties, which is what will let the
+        editor patch colours live in P5: custom properties genuinely cascade, so
+        a colour change repaints the page exactly rather than approximately. */}
+    <style set:html={themeCss()}></style>
+  </head>
+
+  <body>
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <style is:global>
+      :root {
+        color-scheme: light dark;
+      }
+
+      body {
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+        max-width: 42rem;
+        color: var(--color-ink);
+        font-family: "Iowan Old Style", Charter, Cambria, Georgia, serif;
+        font-size: 1.0625rem;
+        line-height: 1.6;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.75rem;
+        text-wrap: balance;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        margin: 2rem 0 0.5rem;
+      }
+
+      .intro {
+        font-size: 1.2rem;
+        color: color-mix(in srgb, var(--color-ink) 72%, transparent);
+        margin: 0 0 2rem;
+      }
+
+      nav.site-nav {
+        display: flex;
+        gap: 1.25rem;
+        margin-bottom: 2.5rem;
+        font-size: 0.9375rem;
+      }
+
+      nav.site-nav a {
+        color: var(--color-brand);
+      }
+
+      a {
+        color: var(--color-brand);
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+packages:
+  - 'packages/*'
+  - 'examples/*'
+
+# Astro's toolchain ships native binaries; allow their install scripts to run.
+onlyBuiltDependencies:
+  - esbuild
+  - sharp

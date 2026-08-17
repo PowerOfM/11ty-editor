@@ -1,0 +1,24 @@
+---
+import { ed } from '@astro-editor/astro/runtime'
+import { getEntry, render } from 'astro:content'
+import Base from '../layouts/Base.astro'
+
+const entry = await getEntry('pages', 'about')
+if (!entry) throw new Error('Missing content collection entry: pages/about')
+
+const { Content } = await render(entry)
+---
+
+<Base title={entry.data.title}>
+  <nav class="site-nav">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+  </nav>
+
+  <h1 {...ed('about.title')}>{entry.data.title}</h1>
+  <p class="intro" {...ed('about.intro')}>{entry.data.intro}</p>
+
+  <div {...ed('about.body')}>
+    <Content />
+  </div>
+</Base>

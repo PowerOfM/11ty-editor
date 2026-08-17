@@ -1,0 +1,22 @@
+{
+  "name": "demo-site",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:edit": "EDITOR_MODE=1 astro build --outDir dist-edit",
+    "check": "astro check",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.5",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@astro-editor/astro": "workspace:*",
+    "@astro-editor/schema": "workspace:*",
+    "astro": "^5.16.2"
+  }
+}
