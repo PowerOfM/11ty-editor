@@ -1,1 +1,1 @@
-# 11ty-editor
+# astro-editor
